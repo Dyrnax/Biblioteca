@@ -1,5 +1,5 @@
 class Editorial:
     def __init__(self,id_editorial,nombre,telefono):
-        self.id = id_editorial
-        self.nombre = nombre
-        self.telefono = telefono
+        self.__id_editorial = id_editorial
+        self.__nombre = nombre
+        self.__telefono = telefono
