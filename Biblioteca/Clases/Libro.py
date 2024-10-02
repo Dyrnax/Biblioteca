@@ -2,7 +2,7 @@ import Autor
 
 class Libro(Autor):
     def __init__(self,isbn,titulo,id_autor,n_copias):
-        Autor.__init__(id_autor) = id_autor
+        Autor.__init__(id_autor)
         self.isbn = isbn
         self.titulo = titulo
         self.n_copias = n_copias

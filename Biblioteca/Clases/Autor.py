@@ -1,5 +1,8 @@
-class Autor:
-    def __init__(self, id_autor, nombre, apellido, seudonimo, fecha_nac, fecha_def, biografia, foto):
+import Pais
+
+class Autor(Pais):
+    def __init__(self, id_autor, codigo_pais, nombre, apellido, seudonimo, fecha_nac, fecha_def, biografia, foto):
+        Pais.__init__(codigo_pais)
         self.id_autor = id_autor
         self.nombre = nombre
         self.apellido = apellido

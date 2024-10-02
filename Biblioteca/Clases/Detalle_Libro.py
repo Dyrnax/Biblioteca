@@ -2,11 +2,11 @@ import Libro
 import Categoria
 import Editorial
 
-class DetalleLibro(Libro,Categoria,Editorial):
+class Detalle_libro(Libro,Categoria,Editorial):
     def __init__(self,isbn, id_categoria, n_paginas, id_editorial, fecha_edicion, id_detalle_libro, stock_total, stock_disponible):
-        Libro.__init__(isbn) = isbn
-        Categoria.__init__(id_categoria) = id_categoria
-        Editorial.__init__(id_editorial) = id_editorial
+        Libro.__init__(isbn)
+        Categoria.__init__(id_categoria)
+        Editorial.__init__(id_editorial)
         self.n_paginas = n_paginas
         self.fecha_edicion = fecha_edicion
         self.id_detalle_libro = id_detalle_libro

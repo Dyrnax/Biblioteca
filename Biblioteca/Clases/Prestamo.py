@@ -1,17 +1,17 @@
 from datetime import datetime, timedelta
 import Detalle_Libro
-from Festivos import constantes
+from Constantes import constantes
 import Usuarios
 
 
 class Prestamo(Detalle_Libro, Usuarios):
     def __init__(self, isbn, n_identificador, id_prestamo, fecha_prestamo, fecha_entrega, fecha_devolucion, cantidad_solicitada):
-        Detalle_Libro.__init__(isbn) = isbn
-        Usuarios.__init__(n_identificador) = n_identificador
+        Detalle_Libro.__init__(isbn)
+        Usuarios.__init__(n_identificador)
         self.id_prestamo = id_prestamo
-        self.f_prestamo = fecha_prestamo
-        self.f_entrega = fecha_entrega
-        self.d_devolucion = fecha_devolucion
+        self.fecha_prestamo = fecha_prestamo
+        self.fecha_entrega = fecha_entrega
+        self.fecha_devolucion = fecha_devolucion
         self.cantidad_solicitada = cantidad_solicitada
         
     def sumar_dias_laborales(fecha_prestamo, dias_prestamo):

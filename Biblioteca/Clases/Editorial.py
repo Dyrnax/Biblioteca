@@ -3,7 +3,7 @@ import Pais
 
 class Editorial(Pais):
     def __init__(self, id_editorial, nombre, telefono, codigo_pais, correo, direccion):
-        Pais.__init__(codigo_pais) =  codigo_pais
+        Pais.__init__(codigo_pais)
         self.id_editorial = id_editorial
         self.nombre = nombre
         self.telefono = telefono
