@@ -1,10 +1,10 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta # Libreria para manejo de fechas
 import Detalle_Libro
-from Constantes import constantes
+from Constantes import constantes # Archivo que contiene dias festivos
 import Usuario
 
 
-class Prestamo(Detalle_Libro, Usuario):
+class Prestamo(Detalle_Libro, Usuario): # Hereda de las clases Detalle Libro y Usuario
     def __init__(self, isbn, n_identificador, id_prestamo, fecha_prestamo, fecha_entrega, fecha_devolucion, cantidad_solicitada):
         Detalle_Libro.__init__(isbn)
         Usuario.__init__(n_identificador)
@@ -14,7 +14,7 @@ class Prestamo(Detalle_Libro, Usuario):
         self.fecha_devolucion = fecha_devolucion
         self.cantidad_solicitada = cantidad_solicitada
         
-    def sumar_dias_laborales(fecha_prestamo, dias_prestamo):
+    def sumar_dias_laborales(fecha_prestamo, dias_prestamo): #Suma dias laborales para devolver la fecha de devolucion
         dias_agregados = 0  
         while dias_agregados < dias_prestamo:
             fecha_prestamo += timedelta(days=1)
@@ -22,7 +22,7 @@ class Prestamo(Detalle_Libro, Usuario):
                 dias_agregados += 1
         return fecha_prestamo    
     
-    def calcular_fechas(self):
+    def calcular_fechas(self): # Termina de calcular la fecha de devolucion según el método anterior
         if(self.stock_disponible > 0):
             if(self.stock_disponible > self.cantidad_solicitada):
                 self.fecha_prestamo = datetime.datetime.now()

@@ -2,7 +2,7 @@ import Libro
 import Categoria
 import Editorial
 
-class Detalle_libro(Libro,Categoria,Editorial):
+class Detalle_libro(Libro,Categoria,Editorial): # Hereda de las clases Libro, Ediorial y categoria
     def __init__(self,isbn, id_categoria, n_paginas, id_editorial, fecha_edicion, id_detalle_libro, stock_total, stock_disponible):
         Libro.__init__(isbn)
         Categoria.__init__(id_categoria)
@@ -14,16 +14,16 @@ class Detalle_libro(Libro,Categoria,Editorial):
         self.stock_total = stock_total
         
     
-    def actualizar_disponibilidad(self, cantidad, accion):
-        if (self.stock_total >= self.stock_disponible + cantidad):
-            if (accion.lower() == "retirar"):
+    def actualizar_disponibilidad(self, cantidad, accion): # Actualiza la disponibilidad del libro
+        if (self.stock_total >= self.stock_disponible + cantidad): # Valida que no vengan más libros de los que hay
+            if (accion.lower() == "retirar"): # Si rettira, resta la cantidad
                 if (self.stock_disponible > 0):
                     self.stock_disponible -= cantidad
                 else:
                     print("No hay suficientes ejemplares para el prestamo")
-            if (accion.lower() == "agregar"):
+            if (accion.lower() == "agregar"): # Si se agrega, suma la cantidad
                 self.stock_disponible += cantidad
             else:
                 print("Acción no válida")
-        else:
+        else: # Imprime si hay problemas de cantidad
             print("Hay problemas en las cantidades")

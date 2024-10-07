@@ -1,6 +1,6 @@
 import Pais
 
-class Autor(Pais):
+class Autor(Pais): # Hereda de la clase pais para asignar un pais al autor
     def __init__(self, id_autor, codigo_pais, nombre, apellido, seudonimo, fecha_nac, fecha_def, biografia, foto):
         Pais.__init__(codigo_pais)
         self.id_autor = id_autor
